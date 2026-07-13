@@ -11,9 +11,16 @@ iframe{border:none;width:100%;height:100%;}
 </style>
 </head>
 <body>
-<iframe id="f"></iframe>
+<iframe id="pc" src="pc.html"></iframe>
+<iframe id="sp" src="sp.html"></iframe>
 <script>
-document.getElementById('f').src = window.innerWidth > 768 ? 'pc.html' : 'sp.html';
+function toggle(){
+  var pc=document.getElementById('pc'),sp=document.getElementById('sp');
+  if(window.innerWidth>768){pc.style.display='block';sp.style.display='none';}
+  else{pc.style.display='none';sp.style.display='block';}
+}
+toggle();
+window.addEventListener('resize',toggle);
 </script>
 </body>
 </html>
