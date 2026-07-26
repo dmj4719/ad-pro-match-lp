@@ -273,5 +273,70 @@ document.addEventListener('DOMContentLoaded', async function() {
   document.addEventListener("DOMContentLoaded",function(){setTimeout(run,800);});
   window.addEventListener("load",function(){setTimeout(run,800);});
 })();
+</script>
+<script>
+(function(){
+  function fixTexts(){
+    var body=document.body;
+    if(!body)return setTimeout(fixTexts,500);
+    var html=body.innerHTML;
+    var changed=false;
+    var replacements=[
+      ["商材・実績で","商材経験・スキル・実績で"],
+      ["不動産——","不動産。"],
+      ["御社名義での稼働（ホワイトレーベル）も可能です。",""],
+      ["最短〇営業日","最短10営業日"],
+      ["商材・実績ベース","商材経験・スキル・実績ベース"],
+      ["ヒアリング後、最短〇営業日でアサイン可能です。","ヒアリング後、最短10営業日でアサイン可能です。"],
+      ["\u00a9 Simcle Inc.","\u00a9 2026 DIGITAL MARKETING JAPAN inc"],
+      ["© Simcle Inc.","© 2026 DIGITAL MARKETING JAPAN inc"],
+      ["採用は時間もコストもかかり、繁閑の波に","繁忙期にマネジメントや案件対応が"],
+      ["固定費が追いつかない","追いつかない"]
+    ];
+    for(var i=0;i<replacements.length;i++){
+      if(html.indexOf(replacements[i][0])>=0){
+        html=html.split(replacements[i][0]).join(replacements[i][1]);
+        changed=true;
+      }
+    }
+    if(changed)body.innerHTML=html;
+
+    /* 権威訴求の数字をオレンジに */
+    var allEls=document.querySelectorAll("*");
+    for(var i=0;i<allEls.length;i++){
+      var el=allEls[i];
+      var t=el.textContent.trim();
+      if(t==="300" && el.style.fontSize && parseInt(el.style.fontSize)>=36){
+        el.style.color="#FF8A1E";
+      }
+      if(t.indexOf("主要媒体を網羅")>=0 && el.children.length===0){
+        el.style.color="#FF8A1E";
+        el.style.fontWeight="700";
+      }
+    }
+
+    /* クライアントへの開示 FAQ削除 */
+    var details=document.querySelectorAll("details");
+    for(var i=0;i<details.length;i++){
+      var sum=details[i].querySelector("summary");
+      if(sum && sum.textContent.indexOf("クライアントへの開示")>=0){
+        details[i].remove();
+      }
+    }
+    var divs=document.querySelectorAll("div");
+    for(var i=0;i<divs.length;i++){
+      if(divs[i].textContent.trim().startsWith("クライアントへの開示は必要ですか？")){
+        var next=divs[i].nextElementSibling;
+        if(next && next.textContent.indexOf("御社のご方針")>=0){
+          next.remove();
+        }
+        divs[i].remove();
+        break;
+      }
+    }
+  }
+  setTimeout(fixTexts,2000);
+  window.addEventListener("load",function(){setTimeout(fixTexts,1500);});
+})();
 </script></body>
 </html>
