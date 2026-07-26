@@ -282,6 +282,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     var html=body.innerHTML;
     var changed=false;
     var replacements=[
+      
+      ["大型案件・コンペ・繁忙期のたびに、リソースが逼迫する","大型案件・コンペ・繁忙期のたびに、<br>リソースが逼迫する"],
+      ["繁忙期にマネジメントや案件対応が追いつかない","繁忙期にマネジメントや<br>案件対応が追いつかない"],
+      ["リテールメディア（Amazon等）・動画など、専門媒体の有識者が部署に足りない","リテールメディア（Amazon等）・動画など、<br>専門媒体の有識者が部署に足りない"],
+      ["外注・パートナーの品質や情報管理にばらつきがあり、ガバナンスが効かない","外注・パートナーの品質や情報管理に<br>ばらつきがあり、ガバナンスが効かない"],
+      ["退職・異動の欠員で、進行中の案件に穴が空く","退職・異動の欠員で、<br>進行中の案件に穴が空く"],
       ["商材・実績で","商材経験・スキル・実績で"],
       ["不動産——","不動産。"],
       ["御社名義での稼働（ホワイトレーベル）も可能です。",""],
@@ -306,7 +312,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     for(var i=0;i<allEls.length;i++){
       var el=allEls[i];
       var t=el.textContent.trim();
-      if((t==="300"||t==="2,384") && el.style.fontSize && parseInt(el.style.fontSize)>=36){
+      if((t==="300"||t==="2,384") && el.style.fontSize && parseInt(el.style.fontSize)>=20){
         el.style.color="#FFB03A";
       }
       if(t.indexOf("主要媒体を網羅")>=0 && el.children.length===0){
