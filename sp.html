@@ -306,11 +306,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     for(var i=0;i<allEls.length;i++){
       var el=allEls[i];
       var t=el.textContent.trim();
-      if(t==="300" && el.style.fontSize && parseInt(el.style.fontSize)>=36){
-        el.style.color="#FF8A1E";
+      if((t==="300"||t==="2,384") && el.style.fontSize && parseInt(el.style.fontSize)>=36){
+        el.style.color="#FFB03A";
       }
       if(t.indexOf("主要媒体を網羅")>=0 && el.children.length===0){
-        el.style.color="#FF8A1E";
+        el.style.color="#FFB03A";
         el.style.fontWeight="700";
       }
     }
