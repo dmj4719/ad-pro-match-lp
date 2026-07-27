@@ -1,26 +1,1690 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ad Pro Match｜大手広告代理店向け 広告のプロ人材活用</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html,body{width:100%;height:100%;overflow:hidden;}
-iframe{border:none;width:100%;height:100%;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Pro Match｜大手広告代理店向け 広告のプロ人材活用</title>
+  <meta name="description" content="採用では間に合わない即戦力を、必要なだけ。審査済みの広告プロ人材を業務委託でアサイン。固定費を増やさず、御社の運用体制をスケールさせます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #17102E;
+      background: #fff;
+      line-height: 1.7;
+      -webkit-text-size-adjust: 100%;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===== DESIGN TOKENS ===== */
+    :root {
+      --accent: #6C4BE0;
+      --accent-light: #F7F5FD;
+      --dark: #17102E;
+      --sub: #4B455F;
+      --light-text: #7A748F;
+      --orange: #FFB03A;
+      --cta-gradient: linear-gradient(100deg, #FF8A1E, #FF5A4E);
+      --purple-gradient: linear-gradient(135deg, #6C4BE0, #9B7BF7);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --max-w: 1160px;
+      --section-py: 100px;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    section { overflow: hidden; }
+
+    /* ===== TYPOGRAPHY ===== */
+    .section-label {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      background: rgba(108,75,224,0.1);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .section-label--light {
+      color: #fff;
+      background: rgba(255,255,255,0.18);
+    }
+    .section-label--orange {
+      color: var(--orange);
+      background: rgba(255,176,58,0.15);
+    }
+    h2.section-title {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 900;
+      line-height: 1.35;
+      color: #17102E;
+      margin-bottom: 16px;
+    }
+    h2.section-title--light { color: #fff; }
+    .section-sub {
+      font-size: 17px;
+      color: var(--sub);
+      line-height: 1.8;
+    }
+    .num-outfit {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 100px;
+      padding: 14px 28px;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn-cta {
+      background: var(--cta-gradient);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(255,90,78,0.32);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    .btn-outline:hover { background: rgba(108,75,224,0.06); }
+    .btn-outline--light {
+      color: #fff;
+      border-color: rgba(255,255,255,0.7);
+    }
+    .btn-outline--light:hover { background: rgba(255,255,255,0.1); }
+    .btn-lg { font-size: 17px; padding: 18px 36px; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: relative;
+      background: #fff;
+      border-bottom: 1px solid rgba(108,75,224,0.1);
+      z-index: 100;
+    }
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 16px;
+    }
+    .header__logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+    .header__logo span { color: var(--dark); }
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header__nav .btn { font-size: 13px; padding: 10px 20px; }
+
+    /* ===== FV ===== */
+    .fv {
+      background: linear-gradient(160deg, #F9F7FF 0%, #fff 60%);
+      padding: 80px 0 0;
+    }
+    .fv__inner {
+      display: grid;
+      grid-template-columns: 55% 1fr;
+      gap: 60px;
+      align-items: center;
+      padding-bottom: 0;
+    }
+    .fv__text-col { padding-bottom: 80px; }
+    .fv__subtitle {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: rgba(108,75,224,0.1);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .fv__h1 {
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: var(--dark);
+    }
+    .fv__h1 .accent { color: var(--accent); }
+    .fv__body {
+      font-size: 16px;
+      color: var(--sub);
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+    .fv__cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .fv__trust {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--sub);
+    }
+    .fv__trust-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .fv__trust-icon svg { width: 16px; height: 16px; fill: #fff; }
+    .fv__image-col {
+      align-self: flex-end;
+      background: #fff;
+      border-radius: var(--radius) var(--radius) 0 0;
+      overflow: hidden;
+      box-shadow: 0 -8px 48px rgba(108,75,224,0.1);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .fv__image-col img {
+      width: 100%;
+      height: auto;
+      max-height: 560px;
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+    }
+
+    /* ===== AUTHORITY BAR ===== */
+    .authority {
+      background: var(--dark);
+      padding: 56px 0;
+    }
+    .authority__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .authority__item {
+      background: var(--dark);
+      padding: 36px 32px;
+      text-align: center;
+    }
+    .authority__num {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(40px, 5vw, 60px);
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .authority__num-unit {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--orange);
+      vertical-align: baseline;
+    }
+    .authority__label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .authority__sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+    .authority__note {
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 20px;
+    }
+
+    /* ===== PROBLEM ===== */
+    .problem {
+      background: var(--dark);
+      padding: var(--section-py) 0;
+    }
+    .problem__head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .problem__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .problem__card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      transition: border-color 0.2s;
+    }
+    .problem__card:hover { border-color: rgba(108,75,224,0.5); }
+    .problem__card:last-child {
+      grid-column: 1 / -1;
+      max-width: 580px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .problem__case-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .problem__card-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.6;
+    }
+    .problem__card-text .highlight { color: var(--orange); }
+    .problem__closing {
+      text-align: center;
+      background: rgba(255,176,58,0.08);
+      border: 1px solid rgba(255,176,58,0.2);
+      border-radius: var(--radius);
+      padding: 32px 40px;
+    }
+    .problem__closing p {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.7;
+    }
+    .problem__closing .underline-highlight {
+      background: linear-gradient(transparent 65%, rgba(255,176,58,0.5) 65%);
+    }
+
+    /* ===== SERVICE ===== */
+    .service {
+      background: #fff;
+      padding: var(--section-py) 0;
+    }
+    .service__head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 24px;
+    }
+    .service__body {
+      font-size: 16px;
+      color: var(--sub);
+      line-height: 1.9;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px;
+    }
+    .service-title-brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .service-title-team {
+      background: linear-gradient(135deg, var(--accent), #9B7BF7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    /* Flow diagram */
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+    .flow-box {
+      background: #fff;
+      border: 2px solid rgba(108,75,224,0.2);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      min-width: 220px;
+      flex: 1;
+      max-width: 280px;
+      box-shadow: 0 4px 24px rgba(108,75,224,0.07);
+    }
+    .flow-box--accent {
+      background: var(--purple-gradient);
+      border-color: transparent;
+      box-shadow: 0 8px 32px rgba(108,75,224,0.3);
+    }
+    .flow-box__title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .flow-box--accent .flow-box__title { color: #fff; }
+    .flow-box__sub {
+      font-size: 12px;
+      color: var(--light-text);
+      line-height: 1.5;
+    }
+    .flow-box--accent .flow-box__sub { color: rgba(255,255,255,0.75); }
+    .flow-box__logo {
+      margin: 0 auto 10px;
+      height: 28px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+    .flow-arrow {
+      flex-shrink: 0;
+      width: 110px;
+      text-align: center;
+      padding: 0 8px;
+    }
+    .flow-arrow__text {
+      font-size: 11px;
+      color: var(--light-text);
+      line-height: 1.6;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ===== STRENGTHS ===== */
+    .strengths {
+      background: var(--accent-light);
+      padding: var(--section-py) 0;
+    }
+    .strengths__head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .strengths__list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .strength-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      box-shadow: 0 4px 24px rgba(108,75,224,0.07);
+      transition: box-shadow 0.2s;
+    }
+    .strength-card:hover { box-shadow: 0 8px 40px rgba(108,75,224,0.14); }
+    .strength-card__img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .strength-card__body {
+      padding: 40px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .strength-card__num {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .strength-card__title {
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .strength-card__text {
+      font-size: 15px;
+      color: var(--sub);
+      line-height: 1.85;
+    }
+
+    /* ===== USE CASES ===== */
+    .use-cases {
+      background: #fff;
+      padding: var(--section-py) 0;
+    }
+    .use-cases__head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .use-cases__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .use-case-card {
+      border: 2px solid rgba(108,75,224,0.15);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .use-case-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 24px rgba(108,75,224,0.1);
+    }
+    .use-case-card__scene {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .use-case-card__title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(108,75,224,0.1);
+    }
+    .use-case-card__list li {
+      font-size: 14px;
+      color: var(--sub);
+      line-height: 1.6;
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+    .use-case-card__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    /* ===== COVERAGE ===== */
+    .coverage {
+      background: var(--accent-light);
+      padding: var(--section-py) 0;
+    }
+    .coverage__head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .coverage__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .coverage__col {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 36px 36px;
+      box-shadow: 0 4px 20px rgba(108,75,224,0.06);
+    }
+    .coverage__col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(108,75,224,0.15);
+    }
+    .coverage__item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .coverage__item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--sub);
+      font-weight: 500;
+    }
+    .coverage__item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .coverage__media-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .coverage__media-cat {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--light-text);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .coverage__media-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .coverage__tag {
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid rgba(108,75,224,0.2);
+      border-radius: 100px;
+      padding: 4px 14px;
+    }
+
+    /* ===== FLOW SECTION ===== */
+    .flow {
+      background: #fff;
+      padding: var(--section-py) 0;
+    }
+    .flow__head {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .flow__steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .flow__steps::before {
+      content: '';
+      position: absolute;
+      top: 27px;
+      left: calc(100% / 8);
+      right: calc(100% / 8);
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), #9B7BF7);
+      z-index: 0;
+    }
+    .flow-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 16px;
+    }
+    .flow-step__num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--purple-gradient);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 16px rgba(108,75,224,0.3);
+    }
+    .flow-step__title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+    .flow-step__badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--cta-gradient);
+      border-radius: 100px;
+      padding: 3px 12px;
+      margin-bottom: 8px;
+    }
+    .flow-step__sub {
+      font-size: 13px;
+      color: var(--light-text);
+      line-height: 1.6;
+    }
+    .flow__note {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 13px;
+      color: var(--light-text);
+      background: var(--accent-light);
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* ===== PRICING ===== */
+    .pricing {
+      background: var(--accent-light);
+      padding: var(--section-py) 0;
+    }
+    .pricing__head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .pricing__card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--dark);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 16px 60px rgba(17,16,46,0.25);
+    }
+    .pricing__card-header {
+      background: var(--purple-gradient);
+      padding: 32px 40px;
+    }
+    .pricing__card-header-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 8px;
+    }
+    .pricing__card-header-sub {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 4vw, 44px);
+      color: #fff;
+      line-height: 1;
+    }
+    .pricing__card-header-sub .price-num {
+      font-size: clamp(40px, 5.5vw, 60px);
+    }
+    .pricing__card-header-sub .price-unit {
+      font-size: 18px;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+    .pricing__card-body {
+      padding: 36px 40px;
+    }
+    .pricing__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .pricing__row:last-child { border-bottom: none; }
+    .pricing__row-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+    }
+    .pricing__row-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .pricing__row-value .accent { color: var(--orange); }
+    .pricing__cta {
+      padding: 0 40px 36px;
+      text-align: center;
+    }
+
+    /* ===== CASE STUDIES ===== */
+    .case-studies {
+      background: #fff;
+      padding: var(--section-py) 0;
+    }
+    .case-studies__head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .case-studies__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .case-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(108,75,224,0.09);
+      border: 1px solid rgba(108,75,224,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+    .case-card__img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .case-card__body { padding: 24px 24px 28px; flex: 1; }
+    .case-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .case-card__tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid rgba(108,75,224,0.2);
+    }
+    .case-card__title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(108,75,224,0.1);
+      line-height: 1.4;
+    }
+    .case-card__dt {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--light-text);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .case-card__dd {
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .case-card__dd--accent {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .case-card__quote {
+      font-size: 13px;
+      color: var(--sub);
+      font-style: italic;
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+    .case-studies__note {
+      font-size: 12px;
+      color: var(--light-text);
+      text-align: center;
+    }
+
+    /* ===== COMPARISON ===== */
+    .comparison {
+      background: var(--accent-light);
+      padding: var(--section-py) 0;
+    }
+    .comparison__head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(108,75,224,0.08);
+    }
+    .comparison-table th {
+      padding: 18px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+    }
+    .comparison-table th:first-child { background: #EAE7F6; color: var(--sub); width: 24%; }
+    .comparison-table th:nth-child(2) { background: #e5e3ef; color: var(--sub); width: 38%; }
+    .comparison-table th:nth-child(3) { background: var(--purple-gradient); color: #fff; width: 38%; }
+    .comparison-table td {
+      padding: 16px 24px;
+      font-size: 14px;
+      color: var(--sub);
+      border-bottom: 1px solid rgba(108,75,224,0.08);
+      vertical-align: top;
+      line-height: 1.6;
+      background: #fff;
+    }
+    .comparison-table tr:nth-child(even) td { background: rgba(247,245,253,0.6); }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table td:nth-child(3) {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .check {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .check-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      background: #fff;
+      padding: var(--section-py) 0;
+    }
+    .faq__head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .faq__list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    details.faq-item {
+      background: #fff;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(108,75,224,0.15);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    details.faq-item[open] { border-color: var(--accent); }
+    details.faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      cursor: pointer;
+      list-style: none;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      gap: 16px;
+      user-select: none;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--accent);
+      flex-shrink: 0;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+    details.faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item__body {
+      padding: 0 28px 24px;
+      font-size: 15px;
+      color: var(--sub);
+      line-height: 1.8;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      background: var(--purple-gradient);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 50%, rgba(155,123,247,0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta__inner { position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 20px;
+    }
+    .final-cta__sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+    .final-cta__btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .final-cta__register-link {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .final-cta__register-link:hover { color: #fff; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark);
+      padding: 32px 0;
+      text-align: center;
+    }
+    .footer__copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fv__text-col { animation: fadeUp 0.6s ease both; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .container { padding: 0 28px; }
+      .strength-card { grid-template-columns: 300px 1fr; }
+      .strength-card__img { height: 240px; }
+      .flow-arrow { width: 80px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --section-py: 64px; }
+      .container { padding: 0 20px; }
+
+      /* Header */
+      .header__inner { height: 60px; gap: 8px; }
+      .header__logo { font-size: 17px; }
+      .header__nav .btn { font-size: 11px; padding: 8px 13px; }
+
+      /* FV */
+      .fv { padding: 48px 0 0; }
+      .fv__inner { grid-template-columns: 1fr; gap: 32px; }
+      .fv__text-col { padding-bottom: 0; }
+      .fv__image-col { border-radius: var(--radius); margin: 0 -20px; }
+      .fv__cta-group { flex-direction: column; }
+      .fv__cta-group .btn { width: 100%; }
+
+      /* Authority */
+      .authority__grid { grid-template-columns: 1fr; }
+      .authority__item { padding: 28px 20px; }
+
+      /* Problem */
+      .problem__grid { grid-template-columns: 1fr; }
+      .problem__card:last-child { max-width: 100%; }
+      .problem__closing { padding: 24px 20px; }
+
+      /* Service flow */
+      .flow-diagram { flex-direction: column; align-items: stretch; gap: 16px; }
+      .flow-box { max-width: 100%; min-width: 0; }
+      .flow-arrow { width: auto; padding: 0; text-align: center; }
+
+      /* Strengths */
+      .strength-card { grid-template-columns: 1fr; }
+      .strength-card__img { height: 220px; width: 100%; }
+      .strength-card__body { padding: 28px 24px; }
+
+      /* Use Cases */
+      .use-cases__grid { grid-template-columns: 1fr; }
+
+      /* Coverage */
+      .coverage__grid { grid-template-columns: 1fr; }
+
+      /* Flow steps */
+      .flow__steps { grid-template-columns: 1fr; gap: 32px; }
+      .flow__steps::before { display: none; }
+      .flow__note { left: 0; transform: none; }
+
+      /* Pricing */
+      .pricing__card-header { padding: 24px 24px; }
+      .pricing__card-body { padding: 24px 24px; }
+      .pricing__cta { padding: 0 24px 28px; }
+
+      /* Case studies */
+      .case-studies__grid { grid-template-columns: 1fr; }
+
+      /* Comparison */
+      .comparison-table { font-size: 12px; }
+      .comparison-table th,
+      .comparison-table td { padding: 12px 14px; }
+
+      /* FAQ */
+      details.faq-item summary { padding: 18px 20px; font-size: 14px; }
+      .faq-item__body { padding: 0 20px 20px; font-size: 14px; }
+
+      /* Final CTA */
+      .final-cta { padding: 72px 0; }
+      .final-cta__btns { flex-direction: column; align-items: center; }
+      .final-cta__btns .btn { width: 100%; max-width: 360px; }
+    }
+  </style>
 </head>
 <body>
-<iframe id="pc" src="pc.html"></iframe>
-<iframe id="sp" src="sp.html"></iframe>
-<script>
-function toggle(){
-  var pc=document.getElementById('pc'),sp=document.getElementById('sp');
-  if(window.innerWidth>768){pc.style.display='block';sp.style.display='none';}
-  else{pc.style.display='none';sp.style.display='block';}
-}
-toggle();
-window.addEventListener('resize',toggle);
-</script>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <a href="#" class="header__logo" aria-label="Ad Pro Match トップへ">Ad Pro <span>Match</span></a>
+      <nav class="header__nav" aria-label="メインナビゲーション">
+        <a href="#cta" class="btn btn-cta">サービス資料をダウンロード</a>
+        <a href="#cta" class="btn btn-outline">個別相談を申し込む</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ===== FIRST VIEW ===== -->
+<section class="fv" aria-label="ファーストビュー">
+  <div class="container">
+    <div class="fv__inner">
+      <div class="fv__text-col">
+        <div class="fv__subtitle">大手広告代理店向け｜広告のプロ人材活用</div>
+        <h1 class="fv__h1">採用では間に合わない<br>即戦力を、<br><span class="accent">必要なだけ。</span></h1>
+        <p class="fv__body">大型案件・繁忙期・専門媒体——固定費を増やさずに、<br>御社の運用体制をスケールさせます。</p>
+        <div class="fv__cta-group">
+          <a href="#cta" class="btn btn-cta btn-lg">サービス資料をダウンロード →</a>
+          <a href="#cta" class="btn btn-outline btn-lg">個別相談を申し込む</a>
+        </div>
+        <div class="fv__trust">
+          <div class="fv__trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 1.5L12.4 7l5.6.8-4 3.9.9 5.5L10 14.5l-4.9 2.7.9-5.5L2 7.8l5.6-.8L10 1.5z"/></svg>
+          </div>
+          <span>NDA・情報管理を整備。御社の一員として、御社名義で。</span>
+        </div>
+      </div>
+      <div class="fv__image-col">
+        <img
+          src="images/hero.png"
+          alt="広告プロ人材活用サービス Ad Pro Match のイメージビジュアル"
+          width="580"
+          height="560"
+          fetchpriority="high"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUTHORITY NUMBERS ===== -->
+<section class="authority" aria-label="実績数値">
+  <div class="container">
+    <div class="authority__grid">
+      <div class="authority__item">
+        <div class="authority__num">
+          <span class="num-outfit">300</span><span class="authority__num-unit">名</span>
+        </div>
+        <div class="authority__label">登録プロ</div>
+        <div class="authority__sub">審査通過した即戦力のみ<br>初日から、御社の戦力に。</div>
+      </div>
+      <div class="authority__item">
+        <div class="authority__num" style="font-size: clamp(22px, 2.8vw, 34px); padding-top: 14px; padding-bottom: 4px;">
+          <span class="num-outfit" style="color: var(--orange);">主要媒体を網羅</span>
+        </div>
+        <div class="authority__label">対応媒体</div>
+        <div class="authority__sub">検索・SNS・リテールメディア・動画<br>専門分野ごとのプロが在籍</div>
+      </div>
+      <div class="authority__item">
+        <div class="authority__num">
+          <span class="num-outfit">2,384</span><span class="authority__num-unit">件</span>
+        </div>
+        <div class="authority__label">登録プロの累計支援実績</div>
+        <div class="authority__sub">実績データベースから最適をご提案</div>
+      </div>
+    </div>
+    <p class="authority__note">※Ad Pro Match登録プロの過去支援実績（自己申告）に基づく合算値です。</p>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem">
+  <div class="container">
+    <div class="problem__head">
+      <div class="section-label section-label--orange">PROBLEM</div>
+      <h2 class="section-title section-title--light">こんな状況、心当たりはありませんか？</h2>
+    </div>
+    <div class="problem__grid">
+      <div class="problem__card">
+        <div class="problem__case-label">CASE 01</div>
+        <p class="problem__card-text">大型案件・コンペ・繁忙期のたびに、<br><span class="highlight">リソースが逼迫する</span></p>
+      </div>
+      <div class="problem__card">
+        <div class="problem__case-label">CASE 02</div>
+        <p class="problem__card-text">繁忙期にマネジメントや<br>案件対応が<span class="highlight">追いつかない</span></p>
+      </div>
+      <div class="problem__card">
+        <div class="problem__case-label">CASE 03</div>
+        <p class="problem__card-text">リテールメディア（Amazon等）・動画など、<br><span class="highlight">専門媒体の有識者</span>が部署に足りない</p>
+      </div>
+      <div class="problem__card">
+        <div class="problem__case-label">CASE 04</div>
+        <p class="problem__card-text">外注・パートナーの品質や情報管理に<br>ばらつきがあり、<span class="highlight">ガバナンスが効かない</span></p>
+      </div>
+      <div class="problem__card">
+        <div class="problem__case-label">CASE 05</div>
+        <p class="problem__card-text">退職・異動の欠員で、<br>進行中の案件に<span class="highlight">穴が空く</span></p>
+      </div>
+    </div>
+    <div class="problem__closing">
+      <p>「人が足りない」「品質を担保できない」を理由に、<br><span class="underline-highlight">案件の機会や品質を取りこぼして</span>いませんか。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section class="service">
+  <div class="container">
+    <div class="service__head">
+      <div class="section-label">SERVICE</div>
+      <h2 class="section-title">
+        <span class="service-title-brand">Ad Pro Match</span> は、<br>御社の<span class="service-title-team">"もう一つのチーム"</span>です。
+      </h2>
+    </div>
+    <p class="service__body">
+      審査を通過した広告のプロ人材を、業務委託で必要な規模・期間だけアサイン。採用や固定費を増やさずに、御社の運用体制をスケールできます。1名のスポットから複数名での体制構築まで、案件規模に応じて対応します。
+    </p>
+    <div class="flow-diagram" role="img" aria-label="Ad Pro Matchのサービスフロー図">
+      <div class="flow-box">
+        <div class="flow-box__title">御社（代理店）</div>
+        <div class="flow-box__sub">マネジメント工数は最小限</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">
+        <span class="flow-arrow__text">案件を依頼<br>⇄<br>最適なプロを選定</span>
+      </div>
+      <div class="flow-box flow-box--accent">
+        <img src="images/logo-white.png" alt="Ad Pro Match" class="flow-box__logo" width="120" height="28">
+        <div class="flow-box__title">Ad Pro Match</div>
+        <div class="flow-box__sub">商材実績を元に最適人材を抽出</div>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">
+        <span class="flow-arrow__text">即戦力をアサイン<br>⇄<br>審査・実績データ</span>
+      </div>
+      <div class="flow-box">
+        <div class="flow-box__title">広告のプロ人材</div>
+        <div class="flow-box__sub">審査通過済み・300名</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRENGTHS ===== -->
+<section class="strengths">
+  <div class="container">
+    <div class="strengths__head">
+      <div class="section-label">STRENGTHS</div>
+      <h2 class="section-title">汎用のフリーランス活用とは違う、3つの理由</h2>
+    </div>
+    <div class="strengths__list">
+      <article class="strength-card">
+        <img src="images/strength01.png" alt="商材経験・スキル・実績でマッチングするイメージ" class="strength-card__img" width="380" height="280" loading="lazy">
+        <div class="strength-card__body">
+          <div class="strength-card__num">01 MATCHING</div>
+          <h3 class="strength-card__title">商材経験・スキル・実績でマッチング</h3>
+          <p class="strength-card__text">ただ人を出すのではなく、その案件の勝ち筋を知る実績者を選びます。EC、リテール、金融、不動産。過去に成果を出した領域から、大型案件にも対応できる即戦力をアサインします。</p>
+        </div>
+      </article>
+      <article class="strength-card">
+        <img src="images/strength02.png" alt="審査を通過した即戦力のみ登録するイメージ" class="strength-card__img" width="380" height="280" loading="lazy">
+        <div class="strength-card__body">
+          <div class="strength-card__num">02 SCREENED</div>
+          <h3 class="strength-card__title">審査を通過した即戦力だけ</h3>
+          <p class="strength-card__text">登録時に実績・スキルを審査。クラウドソーシングにありがちな「当たり外れ」をなくし、御社の品質基準に応える即戦力だけをご紹介します。</p>
+        </div>
+      </article>
+      <article class="strength-card">
+        <img src="images/strength03.png" alt="体制・守秘・品質ガバナンスのイメージ" class="strength-card__img" width="380" height="280" loading="lazy">
+        <div class="strength-card__body">
+          <div class="strength-card__num">03 GOVERNANCE</div>
+          <h3 class="strength-card__title">体制・守秘・品質ガバナンス</h3>
+          <p class="strength-card__text">NDAの締結と情報管理体制を整備し、複数名でのチーム構成やマネジメント・レポーティングにも対応。業務委託として適法な体制（偽装請負を起こさない設計）で、御社の調達・法務基準にも応えます。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== USE CASES ===== -->
+<section class="use-cases">
+  <div class="container">
+    <div class="use-cases__head">
+      <div class="section-label">USE CASES</div>
+      <h2 class="section-title">こんな時に、使えます</h2>
+    </div>
+    <div class="use-cases__grid">
+      <div class="use-case-card">
+        <div class="use-case-card__scene">SCENE 01</div>
+        <h3 class="use-case-card__title">大型案件・繁忙期で、<br>運用が逼迫している</h3>
+        <ul class="use-case-card__list">
+          <li>大型コンペの対応要員を急遽確保したい</li>
+          <li>Q4・年末など繁忙期の一時的な増員</li>
+          <li>複数案件が重なり、社内リソースが枯渇</li>
+          <li>採用では間に合わないスピードで人材が必要</li>
+        </ul>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__scene">SCENE 02</div>
+        <h3 class="use-case-card__title">専門媒体の有識者が、<br>部署に足りない</h3>
+        <ul class="use-case-card__list">
+          <li>リテールメディア（Amazon・楽天等）の専門家</li>
+          <li>YouTube・TikTokなど動画広告の運用者</li>
+          <li>アプリ広告（ASO含む）の経験者</li>
+          <li>金融・不動産など規制業種での実績者</li>
+        </ul>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-card__scene">SCENE 03</div>
+        <h3 class="use-case-card__title">退職・異動で、<br>進行中の案件に穴が空いた</h3>
+        <ul class="use-case-card__list">
+          <li>担当者の急な退職で引き継ぎ要員が必要</li>
+          <li>異動後の欠員を短期間で補完したい</li>
+          <li>クライアントへの影響を最小化したい</li>
+          <li>既存の運用ルールを壊さずに引き継ぎ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COVERAGE ===== -->
+<section class="coverage">
+  <div class="container">
+    <div class="coverage__head">
+      <div class="section-label">COVERAGE</div>
+      <h2 class="section-title">対応職種・対応媒体</h2>
+    </div>
+    <div class="coverage__grid">
+      <div class="coverage__col">
+        <div class="coverage__col-title">対応職種</div>
+        <ul class="coverage__item-list">
+          <li class="coverage__item">運用型広告（検索・ディスプレイ）</li>
+          <li class="coverage__item">SNS広告運用（Meta・X・TikTok等）</li>
+          <li class="coverage__item">リテールメディア運用（Amazon・楽天等）</li>
+          <li class="coverage__item">動画広告運用（YouTube・TikTok等）</li>
+          <li class="coverage__item">アプリ広告・ASO</li>
+          <li class="coverage__item">広告ディレクター・PM</li>
+          <li class="coverage__item">プランナー・ストラテジスト</li>
+        </ul>
+      </div>
+      <div class="coverage__col">
+        <div class="coverage__col-title">対応媒体</div>
+        <div class="coverage__media-groups">
+          <div>
+            <div class="coverage__media-cat">検索連動型</div>
+            <div class="coverage__media-tags">
+              <span class="coverage__tag">Google 検索広告</span>
+              <span class="coverage__tag">Yahoo! 検索広告</span>
+              <span class="coverage__tag">Microsoft Advertising</span>
+            </div>
+          </div>
+          <div>
+            <div class="coverage__media-cat">ディスプレイ</div>
+            <div class="coverage__media-tags">
+              <span class="coverage__tag">Google ディスプレイ</span>
+              <span class="coverage__tag">Yahoo! ディスプレイ</span>
+            </div>
+          </div>
+          <div>
+            <div class="coverage__media-cat">SNS</div>
+            <div class="coverage__media-tags">
+              <span class="coverage__tag">Meta（Facebook/Instagram）</span>
+              <span class="coverage__tag">X (Twitter)</span>
+              <span class="coverage__tag">TikTok</span>
+              <span class="coverage__tag">LINE</span>
+            </div>
+          </div>
+          <div>
+            <div class="coverage__media-cat">動画</div>
+            <div class="coverage__media-tags">
+              <span class="coverage__tag">YouTube</span>
+              <span class="coverage__tag">TikTok Ads</span>
+            </div>
+          </div>
+          <div>
+            <div class="coverage__media-cat">ショッピング・モール</div>
+            <div class="coverage__media-tags">
+              <span class="coverage__tag">Amazon DSP</span>
+              <span class="coverage__tag">楽天広告</span>
+              <span class="coverage__tag">Google ショッピング</span>
+            </div>
+          </div>
+          <div>
+            <div class="coverage__media-cat">アプリ・その他</div>
+            <div class="coverage__media-tags">
+              <span class="coverage__tag">Apple Search Ads</span>
+              <span class="coverage__tag">SmartNews Ads</span>
+              <span class="coverage__tag">Criteo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow">
+  <div class="container">
+    <div class="flow__head">
+      <div class="section-label">FLOW</div>
+      <h2 class="section-title">ご利用の流れ</h2>
+    </div>
+    <div class="flow__steps">
+      <div class="flow-step">
+        <div class="flow-step__num" aria-hidden="true">01</div>
+        <h3 class="flow-step__title">ヒアリング</h3>
+        <div class="flow-step__badge">無料</div>
+        <p class="flow-step__sub">案件の概要・求めるスキル・稼働期間をヒアリングします</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step__num" aria-hidden="true">02</div>
+        <h3 class="flow-step__title">プロ選定</h3>
+        <p class="flow-step__sub">300名の実績データから最適な人材をご提案</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step__num" aria-hidden="true">03</div>
+        <h3 class="flow-step__title">顔合わせ</h3>
+        <p class="flow-step__sub">ご要望に合った候補者とのオンライン面談を設定します</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step__num" aria-hidden="true">04</div>
+        <h3 class="flow-step__title">稼働開始</h3>
+        <div class="flow-step__badge">最短10営業日</div>
+        <p class="flow-step__sub">業務委託契約を締結して即日稼働開始</p>
+      </div>
+    </div>
+    <div class="flow__note">
+      契約は業務委託。稼働量は案件状況に応じて柔軟に増減できます。
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing">
+  <div class="container">
+    <div class="pricing__head">
+      <div class="section-label">PRICING</div>
+      <h2 class="section-title">必要な規模を、必要な期間だけ。</h2>
+    </div>
+    <div class="pricing__card">
+      <div class="pricing__card-header">
+        <div class="pricing__card-header-title">経験・職種に応じた時間単価制</div>
+        <div class="pricing__card-header-sub">
+          時間単価 <span class="num-outfit price-num">4,000</span><span class="price-unit">円〜</span>
+        </div>
+      </div>
+      <div class="pricing__card-body">
+        <div class="pricing__row">
+          <span class="pricing__row-label">初期費用</span>
+          <span class="pricing__row-value"><span class="accent">0円</span></span>
+        </div>
+        <div class="pricing__row">
+          <span class="pricing__row-label">複数名面談希望の場合</span>
+          <span class="pricing__row-value">5万円</span>
+        </div>
+        <div class="pricing__row">
+          <span class="pricing__row-label">契約形態</span>
+          <span class="pricing__row-value">業務委託</span>
+        </div>
+        <div class="pricing__row">
+          <span class="pricing__row-label">稼働期間</span>
+          <span class="pricing__row-value">スポット〜長期、柔軟に対応</span>
+        </div>
+      </div>
+      <div class="pricing__cta">
+        <a href="#cta" class="btn btn-cta btn-lg">まず無料でヒアリングを受ける →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASE STUDIES ===== -->
+<section class="case-studies">
+  <div class="container">
+    <div class="case-studies__head">
+      <div class="section-label">CASE STUDIES</div>
+      <h2 class="section-title">導入事例</h2>
+    </div>
+    <div class="case-studies__grid">
+      <article class="case-card">
+        <img src="images/case01.jpg" alt="大手総合広告代理店 大型案件の運用増員 導入事例イメージ" class="case-card__img" width="360" height="200" loading="lazy">
+        <div class="case-card__body">
+          <div class="case-card__tags">
+            <span class="case-card__tag">大手総合広告代理店</span>
+            <span class="case-card__tag">複数名体制</span>
+          </div>
+          <h3 class="case-card__title">大型案件の運用増員</h3>
+          <div class="case-card__dt">課題</div>
+          <div class="case-card__dd">大型コンペ受注後、社内リソースが不足。採用では間に合わないスピードで即戦力が必要だった。</div>
+          <div class="case-card__dt">対応</div>
+          <div class="case-card__dd">EC分野での実績を持つ運用者を3名アサイン。2週間以内に体制を構築。</div>
+          <div class="case-card__dt">成果</div>
+          <div class="case-card__dd case-card__dd--accent">案件受注から1ヶ月以内に運用開始。担当者の工数を約40%削減（想定値）。</div>
+          <blockquote class="case-card__quote">「当初は外部人材の品質が心配でしたが、初週から戦力になってくれました」</blockquote>
+        </div>
+      </article>
+      <article class="case-card">
+        <img src="images/case02.jpg" alt="大手広告代理店 専門媒体（リテールメディア）補完 導入事例イメージ" class="case-card__img" width="360" height="200" loading="lazy">
+        <div class="case-card__body">
+          <div class="case-card__tags">
+            <span class="case-card__tag">大手広告代理店／デジタル部門</span>
+            <span class="case-card__tag">専門媒体</span>
+          </div>
+          <h3 class="case-card__title">専門媒体（リテールメディア）の補完</h3>
+          <div class="case-card__dt">課題</div>
+          <div class="case-card__dd">Amazonスポンサー広告の運用ニーズが急増。社内に有識者が不在で対応できなかった。</div>
+          <div class="case-card__dt">対応</div>
+          <div class="case-card__dd">Amazon広告の認定資格保有・実績ありのプロをアサイン。運用体制を新設。</div>
+          <div class="case-card__dt">成果</div>
+          <div class="case-card__dd case-card__dd--accent">受注を断っていた案件を取り込み。リテールメディア売上が前四半期比+60%（想定値）。</div>
+          <blockquote class="case-card__quote">「専門性が高く、クライアントへの説明も任せられました」</blockquote>
+        </div>
+      </article>
+      <article class="case-card">
+        <img src="images/case03.jpg" alt="大手広告代理店 退職による欠員の引き継ぎ 導入事例イメージ" class="case-card__img" width="360" height="200" loading="lazy">
+        <div class="case-card__body">
+          <div class="case-card__tags">
+            <span class="case-card__tag">大手広告代理店</span>
+            <span class="case-card__tag">欠員補完</span>
+          </div>
+          <h3 class="case-card__title">退職による欠員の引き継ぎ</h3>
+          <div class="case-card__dt">課題</div>
+          <div class="case-card__dd">主要担当者が急退職。引き継ぎ資料も不十分な状態でクライアント対応が逼迫。</div>
+          <div class="case-card__dt">対応</div>
+          <div class="case-card__dd">同業種での運用経験者をアサイン。引き継ぎドキュメント整備から対応。</div>
+          <div class="case-card__dt">成果</div>
+          <div class="case-card__dd case-card__dd--accent">クライアントへの影響なく引き継ぎ完了。10営業日以内に通常運用を再開（想定値）。</div>
+          <blockquote class="case-card__quote">「スピード感と専門性、どちらも期待以上でした」</blockquote>
+        </div>
+      </article>
+    </div>
+    <p class="case-studies__note">※成果の数値・内容は想定値です。公開前に、実績に基づく内容へ差し替え・確認してください。</p>
+  </div>
+</section>
+
+<!-- ===== COMPARISON ===== -->
+<section class="comparison">
+  <div class="container">
+    <div class="comparison__head">
+      <div class="section-label">COMPARISON</div>
+      <h2 class="section-title">一般的なクラウドソーシングとの違い</h2>
+    </div>
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius);">
+      <table class="comparison-table" style="min-width: 580px;">
+        <thead>
+          <tr>
+            <th scope="col">項目</th>
+            <th scope="col">一般的なクラウドソーシング</th>
+            <th scope="col">Ad Pro Match</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>人材の質</strong></td>
+            <td>玉石混交。スキルにばらつきあり</td>
+            <td><span class="check"><span class="check-mark" aria-hidden="true">✓</span> 審査通過済みの即戦力のみ</span></td>
+          </tr>
+          <tr>
+            <td><strong>マッチング</strong></td>
+            <td>スキルタグや自己申告ベース</td>
+            <td><span class="check"><span class="check-mark" aria-hidden="true">✓</span> 商材経験・スキル・実績ベース</span></td>
+          </tr>
+          <tr>
+            <td><strong>立ち上がり</strong></td>
+            <td>選考〜契約に数週間〜1ヶ月</td>
+            <td><span class="check"><span class="check-mark" aria-hidden="true">✓</span> 最短10営業日でアサイン</span></td>
+          </tr>
+          <tr>
+            <td><strong>体制</strong></td>
+            <td>個人単位。チーム構成は困難</td>
+            <td><span class="check"><span class="check-mark" aria-hidden="true">✓</span> 複数名・チーム体制も対応</span></td>
+          </tr>
+          <tr>
+            <td><strong>守秘・情報管理</strong></td>
+            <td>個人任せ。管理体制が不明瞭</td>
+            <td><span class="check"><span class="check-mark" aria-hidden="true">✓</span> NDA締結・情報管理体制を整備</span></td>
+          </tr>
+          <tr>
+            <td><strong>クライアント対応</strong></td>
+            <td>御社名義での対応は難しい</td>
+            <td><span class="check"><span class="check-mark" aria-hidden="true">✓</span> 御社名義での運用対応が可能</span></td>
+          </tr>
+          <tr>
+            <td><strong>コスト</strong></td>
+            <td>安価だが品質リスクあり</td>
+            <td><span class="check"><span class="check-mark" aria-hidden="true">✓</span> 時間単価制・初期費用0円</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <div class="faq__head">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">よくあるご質問</h2>
+    </div>
+    <div class="faq__list">
+      <details class="faq-item">
+        <summary>契約形態は？適法ですか？</summary>
+        <div class="faq-item__body">
+          業務委託契約を締結します。偽装請負にならないよう、業務の発注・指示系統の設計を含めた体制構築をサポートします。御社の調達・法務部門の基準に沿った形での導入をご支援します。
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>守秘・情報管理はどうなりますか？</summary>
+        <div class="faq-item__body">
+          登録プロ全員とNDAを締結しています。情報管理体制の整備もサポートし、御社の情報セキュリティポリシーに準拠した形での稼働が可能です。クライアント情報の取り扱いについても事前にご相談いただけます。
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>複数名での体制も組めますか？</summary>
+        <div class="faq-item__body">
+          はい、対応しています。1名のスポットアサインから、複数名によるチーム体制まで柔軟に対応します。リーダー役となるプロを中心とした体制構築も可能です。複数名面談を希望される場合は初期費用として5万円が発生します。
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>最短でいつから稼働できますか？</summary>
+        <div class="faq-item__body">
+          ヒアリング後、最短10営業日でアサイン可能です。案件内容や求めるスキルの難易度によって多少前後しますが、急を要する場合はご相談ください。
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>費用はどのくらいかかりますか？</summary>
+        <div class="faq-item__body">
+          経験・職種に応じた時間単価制で、時間単価4,000円〜となります。初期費用は0円です（複数名のプロとの面談を希望する場合は5万円）。稼働量は案件状況に応じて柔軟に増減できます。詳細はヒアリング時にご案内します。
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta" id="cta">
+  <div class="container">
+    <div class="final-cta__inner">
+      <h2>「人が足りない」で、<br>案件の規模も品質も諦めない。</h2>
+      <p class="final-cta__sub">審査済みの即戦力を、必要な規模で。<br>まずは課題と体制のご相談から。</p>
+      <div class="final-cta__btns">
+        <a href="#cta" class="btn btn-cta btn-lg">サービス資料をダウンロード →</a>
+        <a href="#cta" class="btn btn-outline btn-outline--light btn-lg">個別相談を申し込む</a>
+      </div>
+      <a href="#cta" class="final-cta__register-link">広告のプロとして登録したい方はこちら →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer__copy">© 2026 DIGITAL MARKETING JAPAN inc</p>
+  </div>
+</footer>
+
 </body>
 </html>
