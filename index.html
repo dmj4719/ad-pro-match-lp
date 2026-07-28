@@ -1069,8 +1069,11 @@
       .fv__cta-group .btn { width: 100%; }
 
       /* Authority */
-      .authority__grid { grid-template-columns: 1fr; }
-      .authority__item { padding: 28px 20px; }
+      .authority__grid { grid-template-columns: repeat(3, 1fr); }
+      .authority__item { padding: 20px 12px; }
+      .authority__num { font-size: clamp(28px, 6vw, 40px); }
+      .authority__label { font-size: 11px; }
+      .authority__sub { font-size: 11px; }
 
       /* Problem */
       .problem__grid { grid-template-columns: 1fr; }
@@ -1084,7 +1087,7 @@
 
       /* Strengths */
       .strength-card { grid-template-columns: 1fr; }
-      .strength-card__img { height: 220px; width: 100%; }
+      .strength-card__img { height: auto; width: 100%; max-height: 200px; object-fit: contain; background: #f8f8f8; }
       .strength-card__body { padding: 28px 24px; }
 
       /* Use Cases */
@@ -1256,7 +1259,7 @@
       </div>
       <div class="flow-box flow-box--accent">
         <img src="images/logo-white.png" alt="Ad Pro Match" class="flow-box__logo" width="120" height="28">
-        <div class="flow-box__title">Ad Pro Match</div>
+        <!-- title removed -->
         <div class="flow-box__sub">商材実績を元に最適人材を抽出</div>
       </div>
       <div class="flow-arrow" aria-hidden="true">
